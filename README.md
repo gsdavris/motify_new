@@ -1,21 +1,21 @@
-# Hello World example
+# Motify Website
 
-This example shows the most basic idea behind Next. We have 2 pages: `pages/index.js` and `pages/about.js`. The former responds to `/` requests and the latter to `/about`. Using `next/link` you can add hyperlinks between them with universal routing capabilities. The `day` directory shows that you can have subdirectories.
+Marketing site for Motify built with Next.js and Tailwind CSS.
 
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/vercel/next.js/tree/canary/examples/hello-world)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+## Local development
 
 ```bash
-npx create-next-app --example hello-world hello-world-app
-# or
-yarn create next-app --example hello-world hello-world-app
+npm install
+npm run dev
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/import?filter=next.js&utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+Environment variables live in `.env.local` (see `.env.example` when available). Never commit secrets.
+
+## Production deployment
+
+The production server tracks this repository in `/root/motify_new` and serves it through PM2. To deploy a new version:
+
+1. Push your changes to `main` on GitHub.
+2. SSH into the server and run `~/deploy_motify.sh [branch]` (defaults to `main`). The script runs `git pull`, `npm ci`, `npm run build`, and finally `pm2 reload ecosystem.config.js --only motify_new`.
+
+Automating this can be done via a GitHub Action or post-receive hook that executes the same script.
