@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: http://motify.gr/
+
+# Sitemaps
+Sitemap: http://motify.gr/sitemap.xml
