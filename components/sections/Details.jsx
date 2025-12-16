@@ -4,7 +4,7 @@ const Details = ({ locale }) => {
       <div className="flex flex-wrap ">
         <div className="w-full relative pl-0 ">
           <img
-            src="https://cdn.tuk.dev/assets/templates/radian/Back_Image.png"
+            src="/illustrations/map.svg"
             className="h-full w-full absolute inset-0 bg-cover bg-center"
             alt="map"
           />

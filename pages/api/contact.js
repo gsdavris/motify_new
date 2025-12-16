@@ -10,17 +10,12 @@ export default async function handler(req, res) {
 }
 
 async function emailSend(req, res) {
-  let nodemailer = require("nodemailer");
+  const nodemailer = require("nodemailer");
   const mailData = {
     from: "info@motify.gr",
     to: ["gsdavris@gmail.com", "komnino0@gmail.com"],
     subject: `Motify: Message From ${req.body.firstName} ${req.body.lastName}`,
-    text:
-      req.body.message +
-      " | Sent from: " +
-      req.body.email +
-      " | Phone number: " +
-      req.body.phoneNumber,
+    text: `${req.body.message} | Sent from: ${req.body.email} | Phone number: ${req.body.phoneNumber}`,
     html: `
     <div>
       <p>${req.body.message}</p>
@@ -49,24 +44,17 @@ async function emailSend(req, res) {
       }
     });
 
-    transporter.sendMail(mailData, function (err, info) {
-      if (err) {
-        return res.status(500).json({
-          message: err.message,
-          sent: false
-        });
-      } else {
-        return res.status(200).json({
-          message: info,
-          sent: true
-        });
-      }
+    const info = await transporter.sendMail(mailData);
+
+    return res.status(200).json({
+      message: info,
+      sent: true
     });
   } catch (error) {
-    // return the error
-    return res.json({
-      message: new Error(error).message,
-      success: false
+    // Bubble up SMTP/auth errors to the client for easier debugging
+    return res.status(500).json({
+      message: error?.message || "Failed to send mail",
+      sent: false
     });
   }
 }

@@ -1,6 +1,11 @@
 module.exports = {
   images: {
-    domains: ["cdn.tuk.dev"]
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.tuk.dev"
+      }
+    ]
   },
   i18n: {
     locales: ["en", "el"],

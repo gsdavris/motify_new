@@ -1,0 +1,34 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#E2E8F0" offset="0%"/>
+      <stop stop-color="#C7D2FE" offset="100%"/>
+    </linearGradient>
+    <linearGradient id="pin" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#6366F1" offset="0%"/>
+      <stop stop-color="#312E81" offset="100%"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" rx="32" fill="url(#bg)"/>
+  <g opacity="0.65" stroke="#94A3B8">
+    <path d="M120 120H1080" />
+    <path d="M120 220H1080" />
+    <path d="M120 320H1080" />
+    <path d="M120 420H1080" />
+    <path d="M120 520H1080" />
+    <path d="M120 620H1080" />
+    <path d="M240 80V720" />
+    <path d="M440 80V720" />
+    <path d="M640 80V720" />
+    <path d="M840 80V720" />
+    <path d="M1040 80V720" />
+  </g>
+  <circle cx="420" cy="350" r="42" fill="#A5B4FC" opacity="0.6"/>
+  <circle cx="860" cy="500" r="36" fill="#FCD34D" opacity="0.6"/>
+  <path d="M600 280C600 225 643 182 698 182C753 182 796 225 796 280C796 336 750 418 698 480C646 418 600 336 600 280Z" fill="url(#pin)"/>
+  <circle cx="698" cy="278" r="42" fill="white"/>
+  <circle cx="698" cy="278" r="24" fill="#312E81"/>
+  <path d="M230 580C340 520 520 520 640 600C780 692 940 640 1020 580" stroke="#1F2937" stroke-width="5" stroke-linecap="round" opacity="0.35"/>
+  <circle cx="360" cy="420" r="10" fill="#0EA5E9"/>
+  <circle cx="940" cy="640" r="10" fill="#0EA5E9"/>
+</svg>
