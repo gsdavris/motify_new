@@ -35,7 +35,7 @@ export default function Footer() {
                 </a>
                 <a
                   className="bg-transparent transition duration-500 ease-in-out hover:bg-pink-400 shadow font-normal w-16 h-16 inline-flex items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                  href="https://www.instagram.com/motify.athens"
+                  href="https://www.instagram.com/motify_studio"
                   target="_blank"
                   rel="noreferrer"
                 >
